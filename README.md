@@ -33,7 +33,5 @@ The project takes an input JSON file that specifies the folders and files to cre
 ## Installation
 
 ```bash
-git clone https://github.com/jeffgolden/scaffold
-cd scaffold
-pip install .
+pip install git+https://github.com/jeffgolden/scaffold
 ```
