@@ -6,7 +6,8 @@ from typing import Dict, Any
 
 def parse_arguments() -> str:
     """Parses the CLI arguments and returns the scaffold file"""
-    parser = argparse.ArgumentParser(description="Process some integers.")
+    parser = argparse.ArgumentParser(
+        description="Creates files and folders based on a structure specified in a supplied JSON file.")
     parser.add_argument("--scaffold-file", required=True)
     ns = parser.parse_args()
     return ns.scaffold_file
