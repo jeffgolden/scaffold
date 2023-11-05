@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scaffold"
+version = "0.1.0"
+description = "A utility to generate project scaffolding."
+authors = [
+    { name = "Jeff Golden", email = "jeff@codewrench.com" }
+]
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.license]
+file = "LICENSE"
+
+[project.scripts]
+scaffold = "scaffold:main"
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.4.0",
+    "pytest-mock>=3.12.0",
+    "mock>=5.1.0",
+]
+
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
