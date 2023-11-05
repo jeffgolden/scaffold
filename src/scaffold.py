@@ -2,7 +2,7 @@ import pathlib
 import os
 import json
 import argparse
-
+from typing import Dict, Any
 
 def parse_arguments() -> str:
     """Parses the CLI arguments and returns the scaffold file"""
@@ -12,7 +12,7 @@ def parse_arguments() -> str:
     return ns.scaffold_file
 
 
-def read_scaffold_file(scaffold_file: str) -> dict[str:any]:
+def read_scaffold_file(scaffold_file: str) -> Dict[str, Any]:
     """Reads the scaffold file and returns it as a dictionary"""
     try:
         with open(scaffold_file, "r") as f:
@@ -25,7 +25,7 @@ def read_scaffold_file(scaffold_file: str) -> dict[str:any]:
         return None
 
 
-def create_folders(scaffold: dict[str:any]) -> None:
+def create_folders(scaffold: Dict[str, Any]) -> None:
     """Creates the folders in scaffold['folers']"""
     try:
         if "folders" in scaffold:
@@ -35,7 +35,7 @@ def create_folders(scaffold: dict[str:any]) -> None:
         print(f"Error creating {folder} - {ex}")
 
 
-def create_files(scaffold: dict[str:any]) -> None:
+def create_files(scaffold: Dict[str, Any]) -> None:
     """Creates and populates the files in scaffold['files']"""
     last_file = None
     if "files" in scaffold:
