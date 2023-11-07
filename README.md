@@ -24,7 +24,7 @@ The project takes an input JSON file that specifies the folders and files to cre
             ".DS_Store",
             "out",
             "log.log",
-            "__pycache__",
+            "__pycache__"
         ]
     }
 }
